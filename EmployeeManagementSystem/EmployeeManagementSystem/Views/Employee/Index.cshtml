@@ -1,0 +1,67 @@
+﻿@model List<EmployeeManagementSystem.Models.EmployeeModel>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Employees</h4>
+            <p class="card-description">
+                Add class <code>.table-hover</code>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email </th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>number</th>
+                            <th>Designation</th>
+                            <th>Address</th>
+                            <th>city</th>
+                            <th>country</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>IsActive</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @if (Model != null)
+                        {
+                            @foreach (var employee in Model)
+                            {
+                                <tr>
+                                    <td>@employee?.Id</td>
+                                    <td>@employee?.FirstName</td>
+                                    <td>@employee?.LastName</td>
+                                    <td>@employee?.Email</td>
+                                    <td>@employee?.Gender</td>
+                                    <td>@employee?.DOB</td>
+                                    <td>@employee?.PhoneNumber</td>
+                                    <td>@employee?.Designation</td>
+                                    <td>@employee?.Address</td>
+                                    <td>@employee?.city</td>
+                                    <td>@employee?.country</td>
+                                    <td>@employee?.DepartmentId</td>
+                                    <td>@employee?.SalaryId</td>
+                                    <td><label class="badge badge-danger">@employee?.isActive</label></td>
+                                </tr>
+                            }
+                        }
+                      
+                     
+                       
+                    </tbody>
+                </table>
+                <div>
+                    @Html.ActionLink("Add New Employee", "CreateEmployee")
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
